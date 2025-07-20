@@ -10,7 +10,7 @@ export default function HomePage() {
 
   useEffect(() => {
     async function loadPosts() {
-      const context = import.meta.glob("../posts/*.md");
+      const context = import.meta.glob("../posts/*.mdx");
       const entries = await Promise.all(
         Object.entries(context).map(async ([path, resolver]) => {
           const mod = await resolver();
