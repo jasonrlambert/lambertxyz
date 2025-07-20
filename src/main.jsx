@@ -10,13 +10,13 @@ const Header = () => (
     borderBottom: "1px solid #ddd",
     padding: "1rem 2rem",
     display: "flex",
+    alignItems: "center",
     justifyContent: "space-between",
-    alignItems: "center"
+    flexWrap: "wrap"
   }}>
-    <h1 style={{ margin: 0, fontSize: "1.5rem", fontWeight: "bold" }}>Jason Lambert</h1>
-    <nav>
+    {/* Left: Navigation */}
+    <nav style={{ display: "flex", gap: "1rem" }}>
       <NavLink to="/" end style={({ isActive }) => ({
-        marginRight: "1rem",
         padding: "0.5rem 1rem",
         backgroundColor: isActive ? "#007bff" : "#eee",
         color: isActive ? "#fff" : "#333",
@@ -25,7 +25,7 @@ const Header = () => (
         border: isActive ? "1px solid #007bff" : "1px solid #ccc",
         fontWeight: isActive ? "bold" : "normal"
       })}>
-        🏠 Home
+        Home
       </NavLink>
       <NavLink to="/blog" style={({ isActive }) => ({
         padding: "0.5rem 1rem",
@@ -36,9 +36,27 @@ const Header = () => (
         border: isActive ? "1px solid #007bff" : "1px solid #ccc",
         fontWeight: isActive ? "bold" : "normal"
       })}>
-        📘 Blog
+        Blog
       </NavLink>
     </nav>
+
+    {/* Center: Brand */}
+    <div style={{ fontSize: "1.5rem", fontWeight: "bold", textAlign: "center", flex: 1 }}>
+      Jason R. Lambert
+    </div>
+
+    {/* Right: Social Media */}
+    <div style={{ display: "flex", gap: "1rem" }}>
+      <a href="https://www.linkedin.com/in/jasonrlambert" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style={{ height: "24px" }} />
+      </a>
+      <a href="https://twitter.com/jasonrlambert" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X" style={{ height: "24px" }} />
+      </a>
+      <a href="https://facebook.com/jasonrlambert" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" style={{ height: "24px" }} />
+      </a>
+    </div>
   </header>
 );
 
@@ -52,7 +70,7 @@ const Footer = () => (
     marginTop: "3rem",
     backgroundColor: "#f5f5f5"
   }}>
-    &copy; {new Date().getFullYear()} Jason Lambert. All rights reserved.
+    &copy; {new Date().getFullYear()} Jason R. Lambert. All rights reserved.
   </footer>
 );
 
