@@ -63,10 +63,6 @@ export default function Home() {
           Send
         </button>
       </form>
-
-      <footer style={{ marginTop: "3rem", fontSize: "0.9rem", color: "#777", borderTop: "1px solid #ccc", paddingTop: "1rem" }}>
-        &copy; {new Date().getFullYear()} Jason Lambert. All rights reserved.
-      </footer>
     </div>
   );
 }
